@@ -1019,3 +1019,9 @@ html:has(.lightbox:target) { overflow: hidden; }
 @media (max-width: 23em) {
   .site-header__brand .site-header__km { display: none; }
 }
+
+/* Accueil : le logo de la marque dans la première ligne du tableau */
+.facts__logo dd { display: flex; align-items: center; }
+.facts__logo-img { width: auto; height: 2.75rem; }
+.facts__logo-img.facts__logo--wide { height: auto; width: min(11rem, 100%); }
+.brand__head .brand__more { margin-top: 1rem; }
