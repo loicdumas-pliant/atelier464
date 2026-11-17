@@ -31,6 +31,21 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Noto Sans Khmer";
+  src: url("../fonts/noto-sans-khmer-khmer-400-normal.woff2") format("woff2");
+  font-weight: 300 400;
+  font-display: swap;
+  unicode-range: U+1780-17FF, U+19E0-19FF, U+200B-200D, U+25CC;
+}
+@font-face {
+  font-family: "Noto Sans Khmer";
+  src: url("../fonts/noto-sans-khmer-khmer-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  unicode-range: U+1780-17FF, U+19E0-19FF, U+200B-200D, U+25CC;
+}
+
 /* ---------- Variables ---------- */
 :root {
   --teal: #65b1a7;          /* couleur primaire de la charte : RGB 101,177,167 */
@@ -966,3 +981,41 @@ html:has(.lightbox:target) { overflow: hidden; }
 .campaign-visit .section-label { justify-self: stretch; margin-bottom: 0; }
 .campaign-visit__address { font: 300 clamp(1.75rem, 4vw, 3.25rem)/1.1 var(--font-display); text-transform: uppercase; }
 .campaign-visit p { color: var(--ink-soft); }
+
+
+/* ==========================================================================
+   KHMER : titre de l'en-tête et mentions « Cambodge »
+   ========================================================================== */
+:lang(km) {
+  font-family: "Noto Sans Khmer", "Khmer OS", "Leelawadee UI", sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.6;
+}
+.site-header__km {
+  padding-left: .75rem;
+  border-left: 1px solid var(--line);
+  font-size: .95rem;
+  color: var(--teal-deep);
+}
+.site-footer__km { font-size: 1rem; color: var(--teal); }
+.visit__country { display: block; }
+.visit__country [lang="km"] { font-size: .5em; vertical-align: middle; margin-left: .3em; }
+
+@media (max-width: 40em) {
+  /* Sur mobile : l'icône + le titre khmer (le nom latin est déjà dans le logo) */
+  .site-header__brand .site-header__km { display: inline; padding-left: 0; border: 0; font-size: .9rem; }
+}
+
+/* En-tête mobile : rien ne passe à la ligne */
+.site-header__brand span,
+.site-nav a { white-space: nowrap; }
+@media (max-width: 40em) {
+  .site-header { gap: .5rem; }
+  .site-header__brand { gap: .5rem; }
+  .site-nav ul { gap: .9rem; }
+  .site-nav a { font-size: .68rem; letter-spacing: .08em; }
+}
+@media (max-width: 23em) {
+  .site-header__brand .site-header__km { display: none; }
+}
