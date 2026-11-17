@@ -17,3 +17,21 @@ Marques : Kingdom of Wow · Maison Sirivan · Morowood · Tamara Venn.
 
 Après une modification du CSS, incrémenter `?v=` dans le lien `css/style.css?v=…` de `index.html`
 pour que les navigateurs rechargent la feuille de style.
+
+## Pages de campagne (`promo/`)
+
+Pages courtes liées à une action précise (flyer, QR code, publicité, soldes).
+Elles ne sont pas dans le menu du site : on y accède par leur lien direct.
+
+| Dossier | Adresse en ligne | Usage |
+|---|---|---|
+| `promo/_template/` | — | Modèle à copier (non indexé par Google) |
+| `promo/follow-us/` | `…/atelier464/promo/follow-us/` | Carte QR « Join our community » : Instagram, Facebook, avis Google |
+| `promo/espadrilles-sale/` | `…/atelier464/promo/espadrilles-sale/` | Exemple d'après le flyer « Wild Sale » (non indexé) |
+
+Créer une nouvelle campagne :
+1. Copier `promo/_template/` et renommer le dossier (minuscules, tirets : `fete-des-meres`).
+2. Remplacer chaque texte entre `[CROCHETS]` et les images.
+3. Garder `<meta name="robots" content="noindex">` pour une offre limitée dans le temps ; le retirer pour une page permanente.
+4. Générer le QR code vers l'adresse de la page.
+5. Quand l'offre est terminée : supprimer le dossier, ou rediriger le texte vers « Offer ended — visit us ».
