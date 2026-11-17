@@ -37,8 +37,8 @@
   --teal-deep: #2f6b63;     /* version foncée, lisible sur fond clair */
   --ink: #1c1d1d;
   --ink-soft: #55595a;
-  --paper: #f5f2ec;
-  --paper-2: #ebe6dc;
+  --paper: #f1f6f4;            /* vert d'eau très pâle */
+  --paper-2: #e1ece8;          /* vert d'eau, sections alternées */
   --line: rgb(28 29 29 / 0.15);
 
   --font-display: "Josefin Sans", "Futura", "Century Gothic", system-ui, sans-serif;
@@ -123,7 +123,7 @@ address { font-style: normal; }
   justify-content: space-between;
   gap: 1rem;
   padding-inline: var(--gutter);
-  background: rgb(245 242 236 / 0.92);
+  background: rgb(241 246 244 / 0.92);
   border-bottom: 1px solid var(--line);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -241,8 +241,8 @@ address { font-style: normal; }
 .figures dd {
   margin-top: .75rem;
   padding-top: .75rem;
-  border-top: 1px solid rgb(245 242 236 / 0.25);
-  color: rgb(245 242 236 / 0.8);
+  border-top: 1px solid rgb(241 246 244 / 0.25);
+  color: rgb(241 246 244 / 0.8);
 }
 
 /* ---------- Index des marques ---------- */
@@ -562,7 +562,7 @@ address { font-style: normal; }
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgb(245 242 236 / 0.9);
+  background: rgb(241 246 244 / 0.9);
   color: var(--ink);
   font: 300 1.5rem/1 var(--font-display);
   opacity: 0;
@@ -629,7 +629,7 @@ address { font-style: normal; }
   place-items: center;
   width: 3.25rem;
   height: 3.25rem;
-  border: 1px solid rgb(245 242 236 / 0.3);
+  border: 1px solid rgb(241 246 244 / 0.3);
   border-radius: 50%;
   color: var(--paper);
   text-decoration: none;
