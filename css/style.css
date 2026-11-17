@@ -661,3 +661,187 @@ html:has(.lightbox:target) { overflow: hidden; }
   .lightbox:target,
   .lightbox__figure img { animation: none; }
 }
+
+/* ==========================================================================
+   PAGES MARQUES  (kingdom-of-wow/, maison-sirivan/, morowood/, tamara-venn/)
+   ========================================================================== */
+
+.link-arrow {
+  display: inline-flex;
+  gap: .6rem;
+  align-items: center;
+  font-size: .85rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid currentColor;
+  transition: gap .3s ease, color .3s ease;
+}
+.link-arrow:hover { gap: 1.1rem; color: var(--teal-deep); }
+
+.breadcrumb {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding: calc(var(--header-h) + 1.5rem) var(--gutter) 0;
+}
+.breadcrumb a {
+  font-size: .8rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+.breadcrumb a:hover { color: var(--teal-deep); }
+
+/* En-tête de page marque */
+.brand-hero {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding: clamp(3rem, 8vw, 6rem) var(--gutter) clamp(3rem, 7vw, 5rem);
+  display: grid;
+  gap: 1.75rem;
+  justify-items: start;
+}
+.brand-hero__name {
+  font: 300 clamp(2.5rem, 10vw, 9.5rem)/.92 var(--font-display);
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+.brand-hero__lead { max-width: 30ch; }
+
+/* Histoire + fiche */
+.story {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding: 0 var(--gutter) clamp(4rem, 9vw, 7rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  border-bottom: 1px solid var(--line);
+}
+.story__text { display: grid; gap: 1.25rem; color: var(--ink-soft); max-width: 62ch; }
+.story__text p:first-child { color: var(--ink); font-size: 1.15rem; }
+@media (min-width: 60em) {
+  .story { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: start; }
+  .story .facts { position: sticky; top: calc(var(--header-h) + 2rem); margin: 0; }
+}
+
+/* Collections : titre + galerie en mosaïque (colonnes CSS) */
+.collection {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding: clamp(4rem, 9vw, 7rem) var(--gutter) 0;
+}
+.collection__head {
+  display: grid;
+  gap: .75rem;
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  max-width: 50rem;
+}
+.collection__title {
+  font: 300 clamp(2rem, 5vw, 4rem)/1 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+}
+.collection__head p { color: var(--ink-soft); }
+
+.masonry {
+  columns: 3 16rem;
+  column-gap: clamp(.75rem, 1.5vw, 1.25rem);
+}
+.masonry figure {
+  break-inside: avoid;
+  margin-bottom: clamp(.75rem, 1.5vw, 1.25rem);
+  overflow: hidden;
+  background: var(--paper-2);
+}
+.masonry img { width: 100%; }
+.masonry figcaption {
+  padding: .6rem .2rem .2rem;
+  background: var(--paper);
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* Appel à la visite + marque suivante */
+.brand-cta {
+  max-width: var(--max);
+  margin: clamp(5rem, 10vw, 8rem) auto 0;
+  padding: clamp(3rem, 7vw, 5rem) var(--gutter);
+  display: grid;
+  gap: 2rem;
+  justify-items: start;
+  border-top: 1px solid var(--line);
+}
+.brand-cta__text {
+  font: 300 clamp(1.6rem, 3.5vw, 3rem)/1.15 var(--font-display);
+  max-width: 28ch;
+}
+
+.next-brand a {
+  display: grid;
+  gap: .75rem;
+  padding: clamp(3rem, 8vw, 6rem) var(--gutter);
+  background: var(--teal);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background .3s ease;
+}
+.next-brand a:hover { background: #7bc0b7; }
+.next-brand__label { font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; }
+.next-brand__name { font: 300 clamp(2.25rem, 7vw, 6rem)/1 var(--font-display); text-transform: uppercase; }
+
+/* Réseaux sociaux dans le pied de page */
+.site-footer__social { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 2rem; }
+.site-footer__social a { font-size: .85rem; color: var(--teal); text-underline-offset: .3em; }
+.site-footer__social a:hover { color: var(--paper); }
+.site-footer__legal + .site-footer__legal { margin-top: -1.5rem; }
+
+/* ==========================================================================
+   SECTION VISIT : grande photo + miniatures
+   ========================================================================== */
+.visit__media { display: grid; gap: clamp(.5rem, 1vw, .75rem); }
+.thumbs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(.5rem, 1vw, .75rem);
+}
+.thumbs figure { aspect-ratio: 1; overflow: hidden; }
+.thumbs img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease, opacity .3s ease; }
+.zoom--thumb::after { display: none; }
+.zoom--thumb:hover img,
+.zoom--thumb:focus-visible img { transform: scale(1.06); opacity: .85; }
+@media (max-width: 40em) {
+  .thumbs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Légende des tableaux dans la visionneuse */
+.lightbox__figure figcaption em { font-style: normal; opacity: .85; text-transform: none; letter-spacing: .02em; }
+
+/* La photo de la rue est en basse définition (720 px) : on limite la largeur du bloc
+   pour qu'elle reste nette, aligné à gauche avec le reste de la section. */
+.visit > .visit__media {
+  max-width: 56rem;
+  margin-left: max(0px, (100% - (var(--max) - 2 * var(--gutter))) / 2);
+  margin-right: auto;
+}
+
+/* Grand écran : adresse et horaires à gauche, photos à droite */
+@media (min-width: 60em) {
+  .visit {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    column-gap: clamp(2rem, 5vw, 5rem);
+    padding-inline: max(var(--gutter), (100vw - var(--max)) / 2 + var(--gutter));
+    align-items: start;
+  }
+  .visit > * { max-width: none; margin: 0; }
+  .visit > .section-label { grid-column: 1 / -1; }
+  .visit > .visit__address { grid-column: 1; font-size: clamp(2.5rem, 4.6vw, 4.75rem); }
+  .visit > .visit__grid { grid-column: 1; grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .visit > .visit__media { grid-column: 2; grid-row: 2 / span 2; max-width: none; margin: 0; }
+}

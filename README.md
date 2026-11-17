@@ -7,9 +7,10 @@ Marques : Kingdom of Wow · Maison Sirivan · Morowood · Tamara Venn.
 
 ## Structure
 
-- `index.html` — page unique
+- `index.html` — page d'accueil
+- `kingdom-of-wow/`, `maison-sirivan/`, `morowood/`, `tamara-venn/` — une page détaillée par marque (`index.html`)
 - `css/style.css` — toute la mise en forme et les animations (CSS seul, sans JavaScript)
-- `img/<marque>/` — un dossier d'images par marque (`atelier464`, `kingdom-of-wow`, `maison-sirivan`, `morowood`, `tamara-venn`)
+- `img/<marque>/` — un dossier d'images par marque (`atelier464`, `kingdom-of-wow`, `maison-sirivan`, `morowood`, `tamara-venn`) ; les photos des pages marques sont dans `img/<marque>/gallery/`
 - `fonts/` — Josefin Sans et Inter (licence SIL OFL)
 
 ## Mise à jour
