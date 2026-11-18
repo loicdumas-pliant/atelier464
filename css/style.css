@@ -64,6 +64,7 @@
 
   --stroke: 3px solid var(--ink);
   --radius: 1.25rem;
+  --radius-btn: .45rem;      /* boutons, menu, étiquettes */
   --shadow: 6px 6px 0 var(--ink);
   --shadow-sm: 4px 4px 0 var(--ink);
 
@@ -113,7 +114,7 @@ address { font-style: normal; }
   padding: .6rem 1rem;
   background: var(--ink);
   color: var(--white);
-  border-radius: 99px;
+  border-radius: var(--radius-btn);
 }
 .skip-link:focus { top: 1rem; }
 
@@ -141,7 +142,7 @@ address { font-style: normal; }
   line-height: 1;
   padding: .45rem 1rem;
   border: 2px solid currentColor;
-  border-radius: 99px;
+  border-radius: var(--radius-btn);
 }
 .section-label { margin-bottom: clamp(1.5rem, 4vw, 3rem); }
 
@@ -162,7 +163,7 @@ address { font-style: normal; }
   background: var(--ink);
   color: var(--white);
   border: var(--stroke);
-  border-radius: 99px;
+  border-radius: var(--radius-btn);
   box-shadow: 4px 4px 0 var(--teal);
   font-weight: 800;
   text-decoration: none;
@@ -253,7 +254,7 @@ address { font-style: normal; }
   display: inline-block;
   padding: .35rem .9rem;
   border: 2px solid var(--ink);
-  border-radius: 99px;
+  border-radius: var(--radius-btn);
   font-weight: 700;
   font-size: .9rem;
   text-decoration: none;
@@ -401,26 +402,34 @@ address { font-style: normal; }
 .brand__more {
   display: inline-flex;
   align-items: center;
-  gap: .9rem;
+  gap: 1rem;
   margin-top: 1rem;
   font-weight: 800;
   text-decoration: none;
 }
+/* Flèche fine dessinée en CSS : un trait + une pointe ; elle s'allonge au survol */
 .brand__more-arrow {
-  display: grid;
-  place-items: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  border: var(--stroke);
-  border-radius: 50%;
-  background: var(--mint-1);
-  color: var(--ink);
-  font-size: 1.5rem;
-  box-shadow: var(--shadow-sm);
-  transition: transform .2s ease, background .2s ease;
+  order: 2;
+  position: relative;
+  width: 2.75rem;
+  height: 2px;
+  background: currentColor;
+  font-size: 0;               /* masque le caractère « → » du HTML */
+  transition: width .3s ease;
+}
+.brand__more-arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: .6rem;
+  height: .6rem;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
 }
 .brand__more:hover .brand__more-arrow,
-.brand__more:focus-visible .brand__more-arrow { transform: translateX(.35rem); background: var(--white); }
+.brand__more:focus-visible .brand__more-arrow { width: 4.25rem; }
 
 .brand__body { display: grid; gap: 1.5rem; max-width: 46rem; }
 .brand__body > p:not(.lead) { max-width: 60ch; }
@@ -536,7 +545,7 @@ address { font-style: normal; }
   display: inline-block;
   padding: .35rem .9rem;
   border: 2px solid var(--mint-3);
-  border-radius: 99px;
+  border-radius: var(--radius-btn);
   font-weight: 700;
   text-decoration: none;
   color: var(--mint-1);
@@ -567,7 +576,7 @@ address { font-style: normal; }
   display: grid;
   place-items: center;
   border: var(--stroke);
-  border-radius: 50%;
+  border-radius: var(--radius-btn);
   background: var(--mint-1);
   color: var(--ink);
   font-weight: 800;
@@ -633,7 +642,7 @@ address { font-style: normal; }
   width: 3.25rem;
   height: 3.25rem;
   border: 3px solid var(--mint-1);
-  border-radius: 50%;
+  border-radius: var(--radius-btn);
   background: var(--mint-1);
   color: var(--ink);
   text-decoration: none;
@@ -666,7 +675,7 @@ html:has(.lightbox:target) { overflow: hidden; }
   padding: .4rem 1rem;
   background: var(--white);
   border: 2px solid var(--ink);
-  border-radius: 99px;
+  border-radius: var(--radius-btn);
   font-weight: 700;
   text-decoration: none;
 }
@@ -833,7 +842,7 @@ html:has(.lightbox:target) { overflow: hidden; }
 .site-header__km {
   padding: .1rem .7rem;
   background: var(--teal);
-  border-radius: 99px;
+  border-radius: var(--radius-btn);
   font-size: .9rem;
   font-weight: 500;
 }
