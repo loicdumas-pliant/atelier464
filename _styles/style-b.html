@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Atelier 464 — style b : Magazine de mode</title>
+<style>
+@font-face{font-family:"Archivo";src:url(fonts/archivo-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Archivo";src:url(fonts/archivo-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Archivo";src:url(fonts/archivo-latin-900-normal.woff2) format("woff2");font-weight:900;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni-moda-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni-moda-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni-moda-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni-moda-latin-500-italic.woff2) format("woff2");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url(fonts/bricolage-grotesque-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url(fonts/bricolage-grotesque-latin-800-normal.woff2) format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"Space Mono";src:url(fonts/space-mono-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Space Mono";src:url(fonts/space-mono-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Noto Sans Khmer";src:url(../fonts/noto-sans-khmer-khmer-400-normal.woff2) format("woff2");unicode-range:U+1780-17FF,U+19E0-19FF;font-display:swap}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+h1,h2,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{list-style:none;padding:0}
+a{color:inherit}
+[lang=km]{font-family:"Noto Sans Khmer",sans-serif;letter-spacing:0;text-transform:none}
+.wrap{max-width:90rem;margin-inline:auto;padding-inline:clamp(1.25rem,4vw,4rem)}
+.photos{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--gap,1rem)}
+.photos figure:first-child{grid-row:span 2}
+.photos img{width:100%;height:100%;object-fit:cover}
+.facts div{display:grid;grid-template-columns:minmax(7rem,1fr) 2fr;gap:1rem;padding-block:.8rem}
+.facts img{height:2.4rem;width:auto}
+nav ul{display:flex;gap:clamp(1rem,3vw,2rem)}
+nav a{text-decoration:none;white-space:nowrap}
+@media(max-width:40em){nav ul{gap:.6rem}nav a{font-size:.7rem!important;padding:.25rem .5rem!important}.logo [lang=km]{display:none}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion:no-preference){
+ .r{animation:r linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+ @keyframes r{from{opacity:0;transform:translateY(2.5rem)}}
+}}
+
+:root{--bg:#10221d;--ink:#f1ede4;--soft:#b9c2bc;--accent:#7fc4ba;--gap:1.25rem}
+body{background:var(--bg);color:var(--ink);font:400 1rem/1.7 "Archivo",Arial,sans-serif}
+.top{border-bottom:1px solid rgb(241 237 228/.2)}
+.top__in{display:flex;justify-content:space-between;align-items:center;height:4.5rem}
+.logo{font:italic 500 1.6rem/1 "Bodoni Moda",serif;text-decoration:none}
+.logo [lang=km]{font-style:normal;font-size:.85rem;color:var(--accent);margin-left:.6rem}
+nav a{font-size:.72rem;letter-spacing:.25em;text-transform:uppercase}
+.hero{padding:clamp(4rem,10vw,8rem) 0 clamp(3rem,6vw,5rem);text-align:center}
+.kicker{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem}
+.h1{font:400 clamp(3.2rem,10vw,10.5rem)/.9 "Bodoni Moda",serif;letter-spacing:-.02em}
+.h1 .em{font-style:italic;color:var(--accent)}
+.sub{margin:2.5rem auto 0;max-width:38ch;color:var(--soft);font:italic 400 1.3rem/1.5 "Bodoni Moda",serif}
+.bleed{padding-inline:clamp(1.25rem,4vw,4rem)}.bleed img{width:100%;max-height:80vh;object-fit:cover}
+.manifesto{padding:clamp(5rem,12vw,9rem) 0}
+.manifesto p{max-width:24ch;margin-inline:auto;text-align:center;font:400 clamp(2rem,4.5vw,4rem)/1.15 "Bodoni Moda",serif}
+.manifesto p::first-letter{font-style:italic;color:var(--accent)}
+.label{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);text-align:center;margin-bottom:2rem;font-weight:400}
+.index{padding-bottom:clamp(4rem,9vw,7rem)}
+.index ol{columns:2 18rem;column-gap:4rem}
+.index li{display:flex;gap:1.25rem;align-items:baseline;padding:1.1rem 0;border-bottom:1px solid rgb(241 237 228/.2);break-inside:avoid}
+.index .n{font:italic 400 1.1rem "Bodoni Moda",serif;color:var(--accent)}
+.index .t{font:400 clamp(1.8rem,3.5vw,2.8rem)/1.1 "Bodoni Moda",serif;flex:1}
+.index .c{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--soft)}
+.brand{background:#ffffff;color:#10221d;padding:clamp(4rem,10vw,8rem) 0}
+.brand__in{display:grid;gap:3rem}
+@media(min-width:60em){.brand__in{grid-template-columns:5fr 7fr}.brand__head{position:sticky;top:3rem;align-self:start}}
+.brand .label{text-align:left;color:#2f6b63}
+.h2{font:italic 400 clamp(3rem,6.5vw,6.5rem)/.95 "Bodoni Moda",serif;margin:-1rem 0 2rem}
+.more{display:inline-flex;gap:1rem;align-items:center;text-decoration:none;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase}
+.more .arrow{display:grid;place-items:center;width:3rem;height:3rem;border:1px solid currentColor;border-radius:50%}
+.more:hover .arrow{background:#10221d;color:#f1ede4}
+.lead{font:400 clamp(1.4rem,2.4vw,2rem)/1.3 "Bodoni Moda",serif;margin-bottom:2rem}
+.lead::before{content:"“";font-style:italic;color:#2f6b63}
+.facts{margin-bottom:2.5rem}.facts div{border-top:1px solid rgb(16 34 29/.2)}
+.facts dt{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;padding-top:.3rem}
+.facts dd{font:italic 400 1.15rem "Bodoni Moda",serif}
+.photos figure{position:relative}
+.visit{padding:clamp(5rem,12vw,9rem) 0;text-align:center}
+.addr{font:400 clamp(2.4rem,6vw,5.5rem)/1.05 "Bodoni Moda",serif}
+.hours{margin-top:2rem;color:var(--soft);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase}
+.foot{border-top:1px solid rgb(241 237 228/.2);padding:2rem 0;text-align:center;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--soft)}
+</style>
+</head>
+<body class="s-b">
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="logo" href="#">Atelier 464 <span lang="km">អាតេលីយេ ៤៦៤</span></a>
+    <nav aria-label="Main"><ul><li><a href="#brands">Brands</a></li><li><a href="#">The space</a></li><li><a href="#">Visit</a></li></ul></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">Phnom Penh, Cambodia — Street 464</p>
+      <h1 class="h1"><span>Contemporary</span> <span class="em">Cambodian</span> <span>design.</span></h1>
+      <p class="sub">Fashion, footwear, furniture and art. Four independent brands, all made in Siem Reap.</p>
+    </div>
+  </section>
+
+  <figure class="bleed"><img src="../img/atelier464/hero-shopfront-1600.jpg" width="1600" height="900" alt="The Atelier 464 shop front."></figure>
+
+  <section class="manifesto">
+    <div class="wrap">
+      <p class="r">Four independent brands. One roof on Street 464. Everything designed and made in Siem Reap — with care, creativity and purpose.</p>
+    </div>
+  </section>
+
+  <section class="index" id="brands">
+    <div class="wrap">
+      <h2 class="label">The brands</h2>
+      <ol>
+        <li class="r"><span class="n">01</span><span class="t">Kingdom of Wow</span><span class="c">Footwear</span></li>
+        <li class="r"><span class="n">02</span><span class="t">Maison Sirivan</span><span class="c">Fashion</span></li>
+        <li class="r"><span class="n">03</span><span class="t">Morowood</span><span class="c">Furniture</span></li>
+        <li class="r"><span class="n">04</span><span class="t">Tamara Venn</span><span class="c">Art</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <article class="brand">
+    <div class="wrap brand__in">
+      <header class="brand__head">
+        <p class="label">01 — Footwear</p>
+        <h2 class="h2">Kingdom of Wow</h2>
+        <a class="more" href="#"><span class="arrow" aria-hidden="true">→</span> Discover Kingdom of Wow</a>
+      </header>
+      <div class="brand__body">
+        <p class="lead r">Cosy handmade wool slippers and easy summer espadrilles — timeless, fun, and made with love.</p>
+        <dl class="facts r">
+          <div><dt>Brand</dt><dd><img src="../img/kingdom-of-wow/logo.svg" width="194" height="134" alt="Kingdom of Wow logo"></dd></div>
+          <div><dt>Made by</dt><dd>Local women artisans, Siem Reap</dd></div>
+          <div><dt>Materials</dt><dd>Wool, leather and other natural materials</dd></div>
+          <div><dt>Certified</dt><dd>B Corp</dd></div>
+        </dl>
+        <div class="photos">
+          <figure><img src="../img/kingdom-of-wow/espadrilles-800.jpg" width="800" height="1200" alt="Espadrilles."></figure>
+          <figure><img src="../img/kingdom-of-wow/gallery/knitting-lavender-800.jpg" width="800" height="533" alt="Knitting a slipper."></figure>
+          <figure><img src="../img/kingdom-of-wow/gallery/slippers-mulberry-800.jpg" width="800" height="800" alt="Mulberry slippers."></figure>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <section class="visit">
+    <div class="wrap">
+      <h2 class="label">Visit us</h2>
+      <p class="addr r">31b, Street 464<br>Tuol Tom Poung<br>Phnom Penh, Cambodia</p>
+      <p class="hours">Open every day · Mon–Fri 8–19 · Sat–Sun 10–19</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot"><div class="wrap">Atelier 464 · <span lang="km">ភ្នំពេញ · កម្ពុជា</span> · Instagram · Facebook</div></footer>
+</body>
+</html>

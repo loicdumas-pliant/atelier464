@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Atelier 464 — style c2 : Pop tropical — Façade 464</title>
+<style>
+@font-face{font-family:"Archivo";src:url(fonts/archivo-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Archivo";src:url(fonts/archivo-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Archivo";src:url(fonts/archivo-latin-900-normal.woff2) format("woff2");font-weight:900;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni-moda-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni-moda-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni-moda-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni-moda-latin-500-italic.woff2) format("woff2");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url(fonts/bricolage-grotesque-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url(fonts/bricolage-grotesque-latin-800-normal.woff2) format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"Space Mono";src:url(fonts/space-mono-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Space Mono";src:url(fonts/space-mono-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Noto Sans Khmer";src:url(../fonts/noto-sans-khmer-khmer-400-normal.woff2) format("woff2");unicode-range:U+1780-17FF,U+19E0-19FF;font-display:swap}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+h1,h2,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{list-style:none;padding:0}
+a{color:inherit}
+[lang=km]{font-family:"Noto Sans Khmer",sans-serif;letter-spacing:0;text-transform:none}
+.wrap{max-width:90rem;margin-inline:auto;padding-inline:clamp(1.25rem,4vw,4rem)}
+.photos{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--gap,1rem)}
+.photos figure:first-child{grid-row:span 2}
+.photos img{width:100%;height:100%;object-fit:cover}
+.facts div{display:grid;grid-template-columns:minmax(7rem,1fr) 2fr;gap:1rem;padding-block:.8rem}
+.facts img{height:2.4rem;width:auto}
+nav ul{display:flex;gap:clamp(1rem,3vw,2rem)}
+nav a{text-decoration:none;white-space:nowrap}
+@media(max-width:40em){nav ul{gap:.6rem}nav a{font-size:.7rem!important;padding:.25rem .5rem!important}.logo [lang=km]{display:none}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion:no-preference){
+ .r{animation:r linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+ @keyframes r{from{opacity:0;transform:translateY(2.5rem)}}
+}}
+:root{--ink:#1b1f24;--white:#ffffff;--hero:#65b1a7;--hero-ink:#1b1f24;--em:#f4cd4f;--em-bg:#1b1f24;--pill:#f4cd4f;--pill-ink:#1b1f24;--mani:#f4cd4f;--mani-ink:#1b1f24;--c1:#65b1a7;--c2:#f4cd4f;--c3:#c9b3e0;--c4:#e6f4f1;--brand:#c9b3e0;--brand-ink:#1b1f24;--btn:#65b1a7;--btn-ink:#1b1f24;--visit:#65b1a7;--visit-ink:#1b1f24;--foot-ink:#f4cd4f}
+body{background:var(--white);color:var(--ink);font:400 1.08rem/1.55 "Bricolage Grotesque",sans-serif}
+.top{position:sticky;top:0;z-index:5;background:var(--white);border-bottom:3px solid var(--ink)}
+.top__in{display:flex;justify-content:space-between;align-items:center;height:4rem}
+.logo{font-weight:800;font-size:1.3rem;text-decoration:none}
+.logo [lang=km]{font-size:.85rem;background:var(--pill);color:var(--pill-ink);border-radius:99px;padding:.15rem .6rem;margin-left:.5rem;vertical-align:middle}
+nav a{font-weight:800;padding:.4rem .9rem;border:2px solid var(--ink);border-radius:99px}
+nav a:hover{background:var(--ink);color:var(--white)}
+.hero{background:var(--hero);color:var(--hero-ink);padding:clamp(3rem,8vw,6rem) 0;border-bottom:3px solid var(--ink)}
+.kicker{display:inline-block;font-weight:800;background:var(--ink);color:var(--hero);border-radius:99px;padding:.35rem 1rem;margin-bottom:1.5rem}
+.h1{font-weight:800;font-size:clamp(3rem,10.5vw,10.5rem);line-height:.88;letter-spacing:-.04em}
+.h1 span{display:block}.h1 .em{color:var(--em);background:var(--em-bg,transparent);width:fit-content;padding:0 .14em;margin-left:-.14em;border-radius:.18em;margin-block:.04em}
+.sub{margin-top:2rem;max-width:34ch;font-size:1.35rem}
+.bleed{border-bottom:3px solid var(--ink)}.bleed img{width:100%;max-height:70vh;object-fit:cover}
+.manifesto{background:var(--mani);color:var(--mani-ink);padding:clamp(3rem,8vw,6rem) 0;border-bottom:3px solid var(--ink)}
+.manifesto p{font-weight:800;font-size:clamp(2rem,5vw,4.5rem);line-height:1.02;letter-spacing:-.02em;max-width:22ch}
+.index{padding:clamp(3rem,8vw,6rem) 0}
+.label{display:inline-block;font-weight:800;font-size:.95rem;border:2px solid currentColor;border-radius:99px;padding:.3rem 1rem;margin-bottom:1.5rem}
+.index ol{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+.index li{border:3px solid var(--ink);border-radius:1.5rem;padding:1.5rem;display:grid;gap:.5rem;box-shadow:6px 6px 0 var(--ink);transition:transform .2s;color:var(--ink)}
+.index li:hover{transform:translate(-3px,-3px)}
+.index li:nth-child(1){background:var(--c1)}.index li:nth-child(2){background:var(--c2)}.index li:nth-child(3){background:var(--c3)}.index li:nth-child(4){background:var(--c4)}
+.index .n{font-weight:800}.index .t{font-weight:800;font-size:2rem;line-height:1}.index .c{font-size:.9rem}
+.brand{background:var(--brand);color:var(--brand-ink);padding:clamp(3rem,8vw,6rem) 0;border-block:3px solid var(--ink)}
+.brand__in{display:grid;gap:2rem}
+@media(min-width:60em){.brand__in{grid-template-columns:5fr 7fr}.brand__head{position:sticky;top:6rem;align-self:start}}
+.h2{font-weight:800;font-size:clamp(3rem,7vw,7rem);line-height:.88;letter-spacing:-.04em;margin:0 0 1.5rem}
+.more{display:inline-flex;gap:.75rem;align-items:center;font-weight:800;text-decoration:none;background:var(--btn);color:var(--btn-ink);border:3px solid var(--ink);border-radius:99px;padding:.8rem 1.4rem;box-shadow:4px 4px 0 var(--ink)}
+.lead{font-weight:800;font-size:clamp(1.4rem,2.4vw,2rem);line-height:1.15;margin-bottom:1.5rem}
+.facts{background:var(--white);color:var(--ink);border:3px solid var(--ink);border-radius:1.25rem;padding:.5rem 1.25rem;margin-bottom:2rem}
+.facts div+div{border-top:2px dashed color-mix(in srgb,var(--ink) 30%,transparent)}.facts dt{font-weight:800}
+.photos img{border:3px solid var(--ink);border-radius:1.25rem}
+.visit{background:var(--visit);color:var(--visit-ink);padding:clamp(3rem,8vw,6rem) 0}
+.addr{font-weight:800;font-size:clamp(2.2rem,6vw,5.5rem);line-height:.95;letter-spacing:-.03em}
+.hours{margin-top:1.5rem;font-weight:800}
+.foot{background:var(--ink);color:var(--foot-ink);padding:1.25rem 0;font-weight:800}
+.swatch{position:fixed;right:1rem;bottom:1rem;z-index:9;display:flex;gap:.35rem;background:#fff;border:2px solid #000;border-radius:99px;padding:.35rem}
+.swatch i{width:1.4rem;height:1.4rem;border-radius:50%;border:1px solid rgb(0 0 0/.25)}
+</style>
+</head>
+<body class="s-c2">
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="logo" href="#">Atelier 464 <span lang="km">អាតេលីយេ ៤៦៤</span></a>
+    <nav aria-label="Main"><ul><li><a href="#brands">Brands</a></li><li><a href="#">The space</a></li><li><a href="#">Visit</a></li></ul></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">Phnom Penh, Cambodia — Street 464</p>
+      <h1 class="h1"><span>Contemporary</span> <span class="em">Cambodian</span> <span>design.</span></h1>
+      <p class="sub">Fashion, footwear, furniture and art. Four independent brands, all made in Siem Reap.</p>
+    </div>
+  </section>
+
+  <figure class="bleed"><img src="../img/atelier464/hero-shopfront-1600.jpg" width="1600" height="900" alt="The Atelier 464 shop front."></figure>
+
+  <section class="manifesto">
+    <div class="wrap">
+      <p class="r">Four independent brands. One roof on Street 464. Everything designed and made in Siem Reap — with care, creativity and purpose.</p>
+    </div>
+  </section>
+
+  <section class="index" id="brands">
+    <div class="wrap">
+      <h2 class="label">The brands</h2>
+      <ol>
+        <li class="r"><span class="n">01</span><span class="t">Kingdom of Wow</span><span class="c">Footwear</span></li>
+        <li class="r"><span class="n">02</span><span class="t">Maison Sirivan</span><span class="c">Fashion</span></li>
+        <li class="r"><span class="n">03</span><span class="t">Morowood</span><span class="c">Furniture</span></li>
+        <li class="r"><span class="n">04</span><span class="t">Tamara Venn</span><span class="c">Art</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <article class="brand">
+    <div class="wrap brand__in">
+      <header class="brand__head">
+        <p class="label">01 — Footwear</p>
+        <h2 class="h2">Kingdom of Wow</h2>
+        <a class="more" href="#"><span class="arrow" aria-hidden="true">→</span> Discover Kingdom of Wow</a>
+      </header>
+      <div class="brand__body">
+        <p class="lead r">Cosy handmade wool slippers and easy summer espadrilles — timeless, fun, and made with love.</p>
+        <dl class="facts r">
+          <div><dt>Brand</dt><dd><img src="../img/kingdom-of-wow/logo.svg" width="194" height="134" alt="Kingdom of Wow logo"></dd></div>
+          <div><dt>Made by</dt><dd>Local women artisans, Siem Reap</dd></div>
+          <div><dt>Materials</dt><dd>Wool, leather and other natural materials</dd></div>
+          <div><dt>Certified</dt><dd>B Corp</dd></div>
+        </dl>
+        <div class="photos">
+          <figure><img src="../img/kingdom-of-wow/espadrilles-800.jpg" width="800" height="1200" alt="Espadrilles."></figure>
+          <figure><img src="../img/kingdom-of-wow/gallery/knitting-lavender-800.jpg" width="800" height="533" alt="Knitting a slipper."></figure>
+          <figure><img src="../img/kingdom-of-wow/gallery/slippers-mulberry-800.jpg" width="800" height="800" alt="Mulberry slippers."></figure>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <section class="visit">
+    <div class="wrap">
+      <h2 class="label">Visit us</h2>
+      <p class="addr r">31b, Street 464<br>Tuol Tom Poung<br>Phnom Penh, Cambodia</p>
+      <p class="hours">Open every day · Mon–Fri 8–19 · Sat–Sun 10–19</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot"><div class="wrap">Atelier 464 · <span lang="km">ភ្នំពេញ · កម្ពុជា</span> · Instagram · Facebook</div></footer>
+<div class="swatch" aria-hidden="true"><i style="background:#65b1a7"></i><i style="background:#f4cd4f"></i><i style="background:#c9b3e0"></i><i style="background:#65b1a7"></i><i style="background:#1b1f24"></i></div>
+</body>
+</html>
